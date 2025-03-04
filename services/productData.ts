@@ -1,6 +1,6 @@
-import { ProductData } from '@/types/productData';
+import { ProductData } from '../types/productData';
 
-export const data: ProductData = {
+export const productData: ProductData = {
   categories: [
     {
       id: 1,
