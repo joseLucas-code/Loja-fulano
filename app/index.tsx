@@ -24,7 +24,7 @@ export default function Index() {
           Aqui você encontra tudo oque precisa.
         </Text>
       </View>
-      <Link replace href={'/home'} asChild>
+      <Link replace href="/home" asChild>
         <Button>Começar as compras</Button>
       </Link>
     </SafeAreaView>
