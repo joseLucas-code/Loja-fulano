@@ -1,6 +1,7 @@
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 import React from 'react';
 import { Product } from '@/types/product';
+import { Link } from 'expo-router';
 
 type ProductProps = {
   products: Product;
@@ -8,25 +9,27 @@ type ProductProps = {
 
 const ProductItem = ({ products }: ProductProps) => {
   return (
-    <View style={styles.container}>
-      <Image
-        source={{ uri: products.image }}
-        resizeMode="contain"
-        style={styles.image}
-      />
-      <View style={styles.content}>
-        <View style={{ flex: 1, gap: 6 }}>
-          <Text style={styles.title}>{products.title}</Text>
-          <Text style={styles.desc}>{products.description}</Text>
+    <Link href={`/product/${products.id}`} asChild>
+      <Pressable style={styles.container}>
+        <Image
+          source={{ uri: products.image }}
+          resizeMode="contain"
+          style={styles.image}
+        />
+        <View style={styles.content}>
+          <View style={{ flex: 1, gap: 6 }}>
+            <Text style={styles.title}>{products.title}</Text>
+            <Text style={styles.desc}>{products.description}</Text>
+          </View>
+          <Text style={styles.price}>
+            {products.price.toLocaleString('pt-BR', {
+              currency: 'BRL',
+              style: 'currency',
+            })}
+          </Text>
         </View>
-        <Text style={styles.price}>
-          {products.price.toLocaleString('pt-BR', {
-            currency: 'BRL',
-            style: 'currency',
-          })}
-        </Text>
-      </View>
-    </View>
+      </Pressable>
+    </Link>
   );
 };
 
