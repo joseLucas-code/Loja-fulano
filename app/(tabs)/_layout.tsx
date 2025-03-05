@@ -1,5 +1,6 @@
 import { Tabs } from 'expo-router';
 import { Ionicons } from '@expo/vector-icons';
+import { Platform } from 'react-native';
 
 const iconSize = 24;
 
@@ -8,7 +9,8 @@ export default function TabsLayout() {
     <Tabs
       screenOptions={{
         tabBarActiveTintColor: '#8b5cf6',
-        tabBarLabelStyle: { fontSize: 14 },
+        tabBarLabelStyle: { fontSize: 12 },
+        tabBarStyle: Platform.OS === 'android' ? { height: 58 } : {},
       }}
     >
       <Tabs.Screen
