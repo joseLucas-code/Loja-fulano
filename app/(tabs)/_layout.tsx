@@ -23,7 +23,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="categories"
         options={{
-          title: 'Categorias',
+          headerShown: false,
           tabBarIcon: ({ color }) => (
             <Ionicons name="archive" size={iconSize} color={color} />
           ),
