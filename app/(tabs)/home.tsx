@@ -1,8 +1,7 @@
-import { FlatList, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import React from 'react';
 import { containerStyle } from '@/styles/global';
 import { getAllProducts } from '@/services/product';
-import ProductItem from '@/components/ProductItem';
 import ProductsList from '@/components/ProductsList';
 
 const Home = () => {

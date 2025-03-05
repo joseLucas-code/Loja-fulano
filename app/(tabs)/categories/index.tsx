@@ -11,10 +11,7 @@ const Categories = () => {
       <View style={styles.container}>
         {categories.map((categorie) => (
           <Link href={`/categories/${categorie.id}`} key={categorie.id} asChild>
-            <Pressable
-              style={{ gap: 6 }}
-              onPress={() => console.log(`/categories/${categorie.id}`)}
-            >
+            <Pressable style={{ gap: 6 }}>
               <Image
                 source={categorie.cover}
                 contentFit="fill"
